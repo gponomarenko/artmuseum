@@ -4,6 +4,30 @@
     @extend %title-fonts;
   }
 
+  &__img {
+    height: 410px;
+    width: 280px;
+    cursor: zoom-out;
+
+    @include tablet {
+      height: 543px;
+      width: 340px;
+    }
+
+    object-fit: cover;
+    object-position: top center;
+
+    transition: transform $time ease-in-out,
+      border-radius $time ease-in-out,
+      box-shadow $time ease-in-out;
+
+    &:hover {
+      box-shadow: 1px 1px 4px 4px $color-text-events;
+      transform: scale(0.95);
+      border-radius: 4px;
+    }
+  }
+
   &__pictures {
     display: flex;
     flex-wrap: nowrap;
@@ -18,30 +42,6 @@
       justify-content: flex-start;
       gap: 30px;
       max-width: 1570px;
-    }
-
-    &__img {
-      height: 410px;
-      width: 280px;
-      cursor: zoom-out;
-
-      @include tablet {
-        height: 543px;
-        width: 340px;
-      }
-
-      object-fit: cover;
-      object-position: top center;
-
-      transition: transform $time ease-in-out,
-        border-radius $time ease-in-out,
-        box-shadow $time ease-in-out;
-
-      &:hover {
-        box-shadow: 1px 1px 4px 4px $color-text-events;
-        transform: scale(0.95);
-        border-radius: 4px;
-      }
     }
 
     & > .gallery__img:nth-of-type(3n) {
